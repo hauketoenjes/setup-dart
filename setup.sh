@@ -77,7 +77,7 @@ echo "Downloading ${URL}..."
 
 # Download installation zip.
 curl --connect-timeout 15 --retry 5 "$URL" > "${HOME}/dartsdk.zip"
-unzip "${HOME}/dartsdk.zip" -d "${RUNNER_TOOL_CACHE}" > /dev/null
+unzip -o "${HOME}/dartsdk.zip" -d "${RUNNER_TOOL_CACHE}" > /dev/null
 if [ $? -ne 0 ]; then
   echo -e "::error::Download failed! Please check passed arguments."
   exit 1
